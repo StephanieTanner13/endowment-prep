@@ -5,73 +5,6 @@ import { _getTarget } from 'gsap/Observer.js';
 
 
 export default function Experience() {
-
-        // const elRef0 = useRef()
-        // const elRef1 = useRef()
-        // const elRef2 = useRef()
-        // const elRef3 = useRef()
-        // const elRef4 = useRef()
-        // const elArray = []
-
-        // useEffect(() =>
-        // {
-        //     elArray.push(elRef0.current)
-        //     elArray.push(elRef1.current)
-        //     elArray.push(elRef2.current)
-        //     elArray.push(elRef3.current)
-        //     elArray.push(elRef4.current)
-            
-
-
-        //     // elArray.addEventListener("click", () =>{
-        //     //     console.log(e)
-        //     // })
-
-        //     // elArray.forEach( (el, index) => {
-        //     //     console.log(el, index)
-
-        //     //     // el.addEventListener("click", (e) => {
-        //     //     //     //console.log("clicked", e);
-        //     //     // });
-        //     // })
-
-        // }, [])
-        
-
-        // const showCovenant = () =>
-        // {
-        //     // const cov = document.querySelectorAll(".covenant")
-
-    
-        //     // for (let i = 0; i < cov.length; i++){
-        //     //     if (i === number){
-        //     //         cov[number].classList.add("see")
-        //     //     }
-        //     //     else {
-        //     //         cov[number].classList.remove("see")
-        //     //     }
-        //     // }
-    
-        // }
-
-        // const showCovenant = () =>
-        // {
-        //     const cov = document.querySelectorAll(".covenant")
-
-        //     console.log(elArray)
-    
-
-        // }
-
-        //         const showCovenant = () =>
-        // {
-        //     const cov = document.querySelector(".obedience")
-
-        //     cov.style.zIndex += 1;
-    
-        // }
-
-
    return <>
    
    
@@ -99,10 +32,8 @@ export default function Experience() {
                 maxWidth={0.3}
                 textAlign="center"
                 text="Law of Obedience"
-                // name="obedience"
-                // ref={elRef0}
-                onPointerEnter = {() => { document.querySelector(".obedience").classList.toggle("active") }}
-                onPointerLeave = {() => { document.querySelector(".obedience").classList.toggle("active") }}
+                onClick = {() => { document.querySelector(".obedience").classList.add("active") }}
+                onPointerLeave = {() => { document.querySelector(".obedience").classList.remove("active") }}
             ></Text>
             <Text
                 position={[0.1, 0.2, 0.4]}
@@ -111,10 +42,8 @@ export default function Experience() {
                 fontSize={0.04}
                 maxWidth={0.3}
                 textAlign="center"
-                // ref={elRef1}
-                // name="sacrifice"
-                onPointerEnter = {() => { document.querySelector(".sacrifice").classList.toggle("active") }}
-                onPointerLeave = {() => { document.querySelector(".sacrifice").classList.toggle("active") }}
+                onClick = {() => { document.querySelector(".sacrifice").classList.add("active") }}
+                onPointerLeave = {() => { document.querySelector(".sacrifice").classList.remove("active") }}
             >Law of Sacrifice</Text>
             <Text
                 position={[0.1, -0.1, 0]}
@@ -122,11 +51,8 @@ export default function Experience() {
                 color="#1c1c1c"
                 fontSize={0.04}
                 maxWidth={0.3}
-                textAlign="center"
-                // ref={elRef2}
-                // name="gospel"
-                onPointerEnter = {() => { document.querySelector(".gospel").classList.toggle("active") }}
-                onPointerLeave = {() => { document.querySelector(".gospel").classList.toggle("active") }}
+                onClick = {() => { document.querySelector(".gospel").classList.add("active") }}
+                onPointerLeave = {() => { document.querySelector(".gospel").classList.remove("active") }}
             >Law of the Gospel</Text>
             <Text
                 position={[0.1, 0.2, -0.4]}
@@ -135,10 +61,8 @@ export default function Experience() {
                 fontSize={0.04}
                 maxWidth={0.3}
                 textAlign="center"
-                // ref={elRef3}
-                // name="chastity"
-                onPointerEnter = {() => { document.querySelector(".chastity").classList.toggle("active") }}
-                onPointerLeave = {() => { document.querySelector(".chastity").classList.toggle("active") }}
+                onClick = {() => { document.querySelector(".chastity").classList.add("active") }}
+                onPointerLeave = {() => { document.querySelector(".chastity").classList.remove("active") }}
             >Law of Chastity</Text>
             <Text
                 position={[0.1, 0.5, -0.45]}
@@ -147,10 +71,8 @@ export default function Experience() {
                 fontSize={0.04}
                 maxWidth={0.3}
                 textAlign="center"
-                // ref={elRef4}
-                // name="consecration"
-                onPointerEnter = {() => { document.querySelector(".consecration").classList.toggle("active") }}
-                onPointerLeave = {() => { document.querySelector(".consecration").classList.toggle("active") }}
+                onClick = {() => { document.querySelector(".consecration").classList.add("active") }}
+                onPointerLeave = {() => { document.querySelector(".consecration").classList.remove("active") }}
             >Law of Consecration</Text>
         </group>
 

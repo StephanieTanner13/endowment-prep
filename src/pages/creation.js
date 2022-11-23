@@ -106,7 +106,7 @@ const Creation = () => {
             },
         });
         tlSplit.fromTo(".sun", { x: "40%" }, { x: "-100%" });
-        tlSplit.fromTo(".moon", { x: "-40%" }, { x: "250%" }, "<");
+        tlSplit.fromTo(".moon", { x: "-40%" }, { x: "220%" }, "<");
 
         //Day 05
         const tlParallaxWhale = gsap.timeline({

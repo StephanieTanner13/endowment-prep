@@ -15,46 +15,64 @@ const Garden = () => {
         const slides = document.querySelectorAll(".story-gallery-container");
         const lines = document.querySelectorAll(".line");
 
-        let currentStorylineNumber;
+        let currentStorylineNumber = 0;
 
-        storylineList.forEach((storyline, index) => {
+        function storylineFunction(){
 
-            const coord = slides[index].getBoundingClientRect().left;
+            storylineList.forEach((storyline, index) => {
 
-            storyline.addEventListener("click", (e) => {
+                let coord;
+                coord = slides[index].getBoundingClientRect().left;
 
-                let storylineName = e.target.getAttribute("storyline");
-                var integer = parseInt(storylineName);
+                    storyline.addEventListener("click", (e) => {
+    
+                        let storylineName = e.target.getAttribute("storyline");
+                        var integer = parseInt(storylineName);
+        
+                        //Check if we are on the same part of the story
+                        if (currentStorylineNumber === storylineName) return;
+        
+                        //Gallery
+                        gsap.to(gallery, { x: -coord, duration: 1, ease: "back.out(1)" });
+        
+                        currentStorylineNumber === storylineName;
+        
+                        let i;
+        
+                        for (i = 0; i < storylineList.length; i++) {
+                            if (i < integer) {
+                                storylineList[i].classList.add("filled");
+                                lines[i].classList.add("filled");
+                            }
+                            else if (i === integer) {
+                                storylineList[i].classList.remove("filled");
+                                storylineList[i].classList.add("outline");
+                                if (i < storylineList.length - 1){
+                                    lines[i].classList.remove("filled");
+                                }
+                            }
+                            else {
+                                storylineList[i].classList.remove("filled");
+                                storylineList[i].classList.remove("outline");
+                                if (i < storylineList.length - 1){
+                                    lines[i].classList.remove("filled");
+                                }
+                                
+                            }
+                        }
+                    });
 
-                //Check if we are on the same part of the story
-                if (currentStorylineNumber === storylineName) return;
-
-                //Gallery
-                gsap.to(gallery, { x: -coord, duration: 1, ease: "back.out(1)" });
-
-                currentStorylineNumber === storylineName;
-
-                let i;
-
-                for (i = 0; i < storylineList.length; i++) {
-                    if (i < integer) {
-                        storylineList[i].classList.add("filled");
-                        lines[i].classList.add("filled");
-                        console.log(lines[i])
-                    }
-                    else if (i === integer) {
-                        storylineList[i].classList.remove("filled");
-                        storylineList[i].classList.add("outline");
-                        lines[i].classList.remove("filled");
-                    }
-                    else {
-                        storylineList[i].classList.remove("filled");
-                        storylineList[i].classList.remove("outline");
-                        lines[i].classList.remove("filled");
-                    }
-                }
             });
-        });
+        }
+
+        // window.addEventListener("resize", (e) =>{
+        //     storylineFunction();
+        // })
+
+        window.onresize = function(){ location.reload(); }
+
+        storylineFunction();
+
 
         //Expulsion
         const tlPinExpulsion = gsap.timeline({
@@ -131,8 +149,8 @@ const Garden = () => {
                                         good and evil.
                                     </p>
                                     <p>
-                                        And God said: Of every tree in the garden though mayest freely eat: But of the tree of the
-                                        knowledge of good and evil, though shalt not eat of it: for in the day that thou eatest
+                                        And God said: Of every tree in the garden thou mayest freely eat: But of the tree of the
+                                        knowledge of good and evil, thou shalt not eat of it: for in the day that thou eatest
                                         thereof thou shalt surely die.
                                     </p>
                                 </div>
@@ -144,7 +162,7 @@ const Garden = () => {
                                 <img src="./images/garden/snake.png" />
                                 <div className="text-content">
                                     <p>
-                                        And satan sought to beguile Eve, for he knew not the mind of God, wherefore he sought to
+                                        And Satan sought to beguile Eve, for he knew not the mind of God, wherefore he sought to
                                         destroy the world.
                                     </p>
                                     <p>
@@ -240,7 +258,7 @@ const Garden = () => {
             {/* <!--END OF GARDEN--> */}
             <section className="expulsion">
                 <div className="expulsion-text-container">
-                    <p><span className="highlightExpulsion">Upon explosion from Eden,</span><span className="highlightExpulsion"> God promised to send a Savior,</span>
+                    <p><span className="highlightExpulsion">Upon expulsion from Eden,</span><span className="highlightExpulsion"> God promised to send a Savior,</span>
                         <span className="highlightExpulsion"> to save everyone from the effects of the fall of
                             Adam and Eve</span><span className="highlightExpulsion"> and to enable us,
                                 on conditions of faith in Christ, repentance, and obedience,
