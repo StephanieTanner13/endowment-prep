@@ -15,7 +15,7 @@ const Garden = () => {
         const slides = document.querySelectorAll(".story-gallery-container");
         const lines = document.querySelectorAll(".line");
 
-        let currentStorylineNumber = 0;
+        let currentStorylineNumber;
 
         function storylineFunction(){
 
@@ -64,10 +64,6 @@ const Garden = () => {
 
             });
         }
-
-        // window.addEventListener("resize", (e) =>{
-        //     storylineFunction();
-        // })
 
         window.onresize = function(){ location.reload(); }
 
