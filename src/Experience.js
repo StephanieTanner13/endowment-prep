@@ -31,10 +31,9 @@ export default function Experience() {
                 fontSize={0.04}
                 maxWidth={0.3}
                 textAlign="center"
-                text="Law of Obedience"
                 onClick = {() => { document.querySelector(".obedience").classList.add("active") }}
-                onPointerLeave = {() => { document.querySelector(".obedience").classList.remove("active") }}
-            ></Text>
+                onPointerMissed={() =>  { document.querySelector(".obedience").classList.remove("active") }}
+            >Law of Obedience</Text>
             <Text
                 position={[0.1, 0.2, 0.4]}
                 rotation={[0, Math.PI/2, 0]}
@@ -43,7 +42,7 @@ export default function Experience() {
                 maxWidth={0.3}
                 textAlign="center"
                 onClick = {() => { document.querySelector(".sacrifice").classList.add("active") }}
-                onPointerLeave = {() => { document.querySelector(".sacrifice").classList.remove("active") }}
+                onPointerMissed={() =>  { document.querySelector(".sacrifice").classList.remove("active") }}
             >Law of Sacrifice</Text>
             <Text
                 position={[0.1, -0.1, 0]}
@@ -51,8 +50,9 @@ export default function Experience() {
                 color="#1c1c1c"
                 fontSize={0.04}
                 maxWidth={0.3}
+                textAlign="center"
                 onClick = {() => { document.querySelector(".gospel").classList.add("active") }}
-                onPointerLeave = {() => { document.querySelector(".gospel").classList.remove("active") }}
+                onPointerMissed={() =>  { document.querySelector(".gospel").classList.remove("active") }}
             >Law of the Gospel</Text>
             <Text
                 position={[0.1, 0.2, -0.4]}
@@ -62,7 +62,7 @@ export default function Experience() {
                 maxWidth={0.3}
                 textAlign="center"
                 onClick = {() => { document.querySelector(".chastity").classList.add("active") }}
-                onPointerLeave = {() => { document.querySelector(".chastity").classList.remove("active") }}
+                onPointerMissed={() =>  { document.querySelector(".chastity").classList.remove("active") }}
             >Law of Chastity</Text>
             <Text
                 position={[0.1, 0.5, -0.45]}
@@ -72,7 +72,7 @@ export default function Experience() {
                 maxWidth={0.3}
                 textAlign="center"
                 onClick = {() => { document.querySelector(".consecration").classList.add("active") }}
-                onPointerLeave = {() => { document.querySelector(".consecration").classList.remove("active") }}
+                onPointerMissed={() =>  { document.querySelector(".consecration").classList.remove("active") }}
             >Law of Consecration</Text>
         </group>
 

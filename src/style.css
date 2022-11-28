@@ -443,6 +443,7 @@ Events Section
   max-width: 1000px;
   min-width: 600px;
   padding: 1rem 0rem;
+  background-color: #1c1c1c;
 }
 
 .active{
